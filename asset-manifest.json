@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/Calion-Crafting-Shop/static/css/main.0c4aede2.css",
-    "main.js": "/Calion-Crafting-Shop/static/js/main.ee1fb7b0.js",
+    "main.js": "/Calion-Crafting-Shop/static/js/main.66c15e4d.js",
     "static/media/elven.ttf": "/Calion-Crafting-Shop/static/media/elven.50ae5e3dffbd6e55ad89.ttf",
     "static/media/hobbit.ttf": "/Calion-Crafting-Shop/static/media/hobbit.4950a625d1c1ad4dfdad.ttf",
+    "static/media/Gurthang.jpeg": "/Calion-Crafting-Shop/static/media/Gurthang.b76bc6790fce7e110bf3.jpeg",
     "static/media/skyrim.ttf": "/Calion-Crafting-Shop/static/media/skyrim.d3168ed0bbf000448314.ttf",
     "static/media/aniron.ttf": "/Calion-Crafting-Shop/static/media/aniron.e594972e07b9abaaab55.ttf",
     "index.html": "/Calion-Crafting-Shop/index.html",
     "main.0c4aede2.css.map": "/Calion-Crafting-Shop/static/css/main.0c4aede2.css.map",
-    "main.ee1fb7b0.js.map": "/Calion-Crafting-Shop/static/js/main.ee1fb7b0.js.map"
+    "main.66c15e4d.js.map": "/Calion-Crafting-Shop/static/js/main.66c15e4d.js.map"
   },
   "entrypoints": [
     "static/css/main.0c4aede2.css",
-    "static/js/main.ee1fb7b0.js"
+    "static/js/main.66c15e4d.js"
   ]
 }
