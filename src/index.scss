@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'hobbit';
+  src: local('hobbit'), url('./fonts/hobbit.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'aniron';
+  src: url('./fonts/aniron.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Elven';
+  src: url('./fonts/elven.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'skyrim';
+  src: url('./fonts/skyrim.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  height: 100vh;
+}
+.main-container {
+  // visibility: hidden;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: 'nav nav nav' 'left main right' 'foo foo foo';
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: minmax(50px, 10vh) 1fr 5vh;
+}
+
+@mixin main {
+  grid-area: main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin aniron {
+  font-family: aniron;
+}
+@mixin hobbit {
+  font-family: hobbit;
+}
+@mixin elven {
+  font-family: elven;
+}
+@mixin skyrim {
+  font-family: skyrim;
+}

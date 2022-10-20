@@ -1,0 +1,74 @@
+@use 'src/index' as general;
+
+.navBar {
+  background-color: #242323;
+  // box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.767);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  grid-area: nav;
+  @include general.aniron;
+}
+.headerLogo {
+  height: 1.8rem;
+}
+
+.headerText {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.navLinks {
+  display: flex;
+  width: 40%;
+  .link {
+    list-style: none;
+    color: white;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+  @include general.hobbit;
+  font-size: 1.7rem;
+}
+
+.cart {
+  background-color: transparent;
+  color: white;
+  border: none;
+  @include general.hobbit;
+  font-size: 1.7rem;
+  margin-left: 15%;
+  transition: all 0.2s ease-out;
+  z-index: 2;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+.pageName {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  justify-content: space-around;
+  height: 80%;
+}
+
+.headerText {
+  font-size: 1.5rem;
+}
+.headerLogo {
+  height: 95%;
+}

@@ -1,0 +1,107 @@
+@use 'src/index' as general;
+
+.product {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: solid 1px rgba(198, 196, 196, 0.583);
+  padding: 10px;
+  justify-content: space-around;
+  background-color: white;
+  @include general.skyrim;
+  letter-spacing: 0px;
+}
+.productImage {
+  width: 75%;
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  @include general.aniron;
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 1.2rem;
+  }
+  p {
+    flex-grow: 1;
+    margin-left: 4px;
+  }
+}
+
+.reviewContainer {
+  display: flex;
+  width: auto;
+  img {
+    height: 1.2rem;
+  }
+  &hover {
+    cursor: pointer;
+  }
+  grid-column: 1/2;
+}
+.notVisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.visible,
+.notVisible {
+  position: absolute;
+  width: 210px;
+  height: 200px;
+  background-color: rgba(64, 63, 61, 0.905);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1.2px solid rgba(198, 196, 196, 0.583);
+  padding-top: 5px;
+}
+
+.addBtn {
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  padding: 3px;
+  // min-width: 200px;
+  // align-self: center;
+  background-color: black;
+  color: white;
+  @include general.skyrim;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 4px 5px 2px rgb(100, 98, 98);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 3px 4px 2px rgb(100, 98, 98);
+  }
+}
+
+.title {
+  grid-column: 1/2;
+}

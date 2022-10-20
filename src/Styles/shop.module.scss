@@ -1,0 +1,22 @@
+.shop {
+  justify-content: center;
+  background-image: url(https://images5.alphacoders.com/614/614690.jpg);
+  background-size: 120%;
+  background-position: 0% 20%;
+  grid-column: 1/4;
+  grid-row: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 1fr 5vh;
+  transition: all 0.1s ease-out;
+}
+
+.productContainer {
+  display: grid;
+  grid-auto-flow: rows;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-column: 2/3;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}

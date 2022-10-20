@@ -1,0 +1,38 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: foo;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.creator > p {
+  color: white;
+  font-size: 0.7rem;
+}
+strong {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.span {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+}
+
+.gitLogo {
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 50%;
+  border: solid 1px white;
+}

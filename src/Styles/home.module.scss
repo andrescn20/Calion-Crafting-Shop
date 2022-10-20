@@ -1,0 +1,55 @@
+@use 'src/index' as general;
+
+.home {
+  grid-column: 1/4;
+  grid-row: 2/4;
+  background-image: url(https://i.pinimg.com/originals/d0/93/18/d093181dea29e7bc603a1a0dfb9231b5.jpg);
+  background-position: 30% 55%;
+  background-size: cover;
+  color: white;
+  @include general.skyrim;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  h1 > span {
+    @include general.hobbit;
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.homeText {
+  position: absolute;
+  left: 12%;
+  top: 32%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.preOrder {
+  border: none;
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: 3.2rem;
+  font-size: 1.3rem;
+  font-weight: 550;
+  // letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 4px 5px 2px rgb(0, 0, 0);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 3px 4px 2px rgb(0, 0, 0);
+  }
+}
