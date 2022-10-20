@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Calion-Crafting-Shop/static/css/main.0c4aede2.css",
+    "main.js": "/Calion-Crafting-Shop/static/js/main.da5b9d29.js",
+    "static/media/elven.ttf": "/Calion-Crafting-Shop/static/media/elven.50ae5e3dffbd6e55ad89.ttf",
+    "static/media/hobbit.ttf": "/Calion-Crafting-Shop/static/media/hobbit.4950a625d1c1ad4dfdad.ttf",
+    "static/media/skyrim.ttf": "/Calion-Crafting-Shop/static/media/skyrim.d3168ed0bbf000448314.ttf",
+    "static/media/aniron.ttf": "/Calion-Crafting-Shop/static/media/aniron.e594972e07b9abaaab55.ttf",
+    "index.html": "/Calion-Crafting-Shop/index.html",
+    "main.0c4aede2.css.map": "/Calion-Crafting-Shop/static/css/main.0c4aede2.css.map",
+    "main.da5b9d29.js.map": "/Calion-Crafting-Shop/static/js/main.da5b9d29.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c4aede2.css",
+    "static/js/main.da5b9d29.js"
+  ]
+}
