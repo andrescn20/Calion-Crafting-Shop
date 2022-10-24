@@ -3,9 +3,7 @@
 .home {
   grid-column: 1/4;
   grid-row: 2/4;
-  background-image: url(https://i.pinimg.com/originals/d0/93/18/d093181dea29e7bc603a1a0dfb9231b5.jpg);
-  background-position: 30% 55%;
-  background-size: cover;
+
   color: white;
   @include general.skyrim;
   letter-spacing: 2px;

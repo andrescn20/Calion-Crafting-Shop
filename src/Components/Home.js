@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../Styles/home.module.scss';
 
-const Home = () => {
+const Home = ({ updateBackground }) => {
+  useEffect(() => updateBackground('home'));
+
   return (
     <div className={styles.home}>
       <div className={styles.homeText}>

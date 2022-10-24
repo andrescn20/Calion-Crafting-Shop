@@ -8,9 +8,12 @@ const ShoppingCart = ({
   modifyCart,
   resetCart,
   globalQuantity,
+  totalPrice,
+  toggleCart,
 }) => {
   const [visibilityClass, setVisibilityClass] = useState(styles.visible);
 
+  //Toggles Visibility on or off.
   useEffect(() => {
     if (isCartVisible === false) {
       setVisibilityClass(styles.notVisible);
@@ -20,6 +23,7 @@ const ShoppingCart = ({
     }
   }, [isCartVisible]);
 
+  //Generates de CartProduct components in cart
   const displayCartItems = cartList.map((item) => {
     return (
       <CartProduct
@@ -33,10 +37,18 @@ const ShoppingCart = ({
 
   return (
     <div className={`${styles.shoppingCart} ${visibilityClass}`}>
-      <div className={styles.itemsContainer}>{displayCartItems}</div>
-      <button className={styles.reset} onClick={resetCart}>
-        Empty Cart
-      </button>
+      <div className={styles.cartContainer}>
+        <div className={styles.products}> {displayCartItems}</div>
+        <div className={styles.cartControls}>
+          <p className={styles.totalPrice}>{'Total: $' + totalPrice}</p>
+          <button className={styles.reset} onClick={resetCart}>
+            Empty Cart
+          </button>
+          <button className={styles.closeCart} onClick={toggleCart}>
+            Close Cart
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

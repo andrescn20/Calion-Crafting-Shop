@@ -1,21 +1,19 @@
 .shop {
   justify-content: center;
-  background-image: url(https://images5.alphacoders.com/614/614690.jpg);
-  background-size: 120%;
-  background-position: 0% 20%;
   grid-column: 1/4;
-  grid-row: 2/4;
+  grid-row: 2/3;
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: 1fr 5vh;
+  flex-grow: 1;
 }
 
 .productContainer {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  padding: 20px;
   display: grid;
   grid-auto-flow: rows;
-  grid-template-columns: repeat(auto-fill, 250px);
-  grid-column: 2/3;
+  grid-template-columns: repeat(auto-fit, 250px);
   justify-content: center;
   gap: 30px;
-  padding: 20px;
 }

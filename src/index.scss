@@ -20,15 +20,25 @@
   margin: 0;
   padding: 0;
 }
-#root {
-  // height: 100vh;
-}
+
 .main-container {
-  // height: 100vh;
+  overflow-x: hidden;
   display: grid;
   grid-template-areas: 'nav nav nav' 'left main right' 'foo foo foo';
   grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: minmax(50px, 10vh) 1fr 5vh;
+  grid-template-rows: 7vh minmax(88vh, 1fr) 5vh;
+
+  &.home {
+    background-image: url(https://i.pinimg.com/originals/d0/93/18/d093181dea29e7bc603a1a0dfb9231b5.jpg);
+    background-position: 30% 55%;
+    background-size: cover;
+  }
+  &.shop {
+    background-image: url(https://images5.alphacoders.com/614/614690.jpg);
+    background-size: 120%;
+    background-position: 0% 20%;
+    background-size: cover;
+  }
 }
 
 @mixin main {

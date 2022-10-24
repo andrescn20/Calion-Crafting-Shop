@@ -6,19 +6,25 @@ import Home from './Components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import swords from './swordsList';
 import { useEffect, useState } from 'react';
-
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [shopList] = useState(swords); //Creates a copy of the external product List for app usage
   const [globalQuantity, setGlobalQuantity] = useState(0);
   const [cartList, setCartList] = useState([]);
+  const [background, setBackground] = useState('home');
+  const [totalPrice, setTotalPrice] = useState(0);
 
   //Set visitbility of Cart on/off. Cart is not rendered but showed or hidden
   const toggleCart = () => {
     setIsCartVisible(!isCartVisible);
   };
 
-  //Called when adding to cart or changing buying quantity
+  //Changes Classes to update Background dependant of page
+  const updateBackground = (currentPage) => {
+    setBackground(currentPage);
+  };
+
+  //Adds the item to the CartList
   const updateCartList = (currentItem) => {
     let newCartList;
     let isRepeated = false;
@@ -56,7 +62,6 @@ const App = () => {
       if (item.quantity <= 0) {
         toBeRemoved = newCartList.indexOf(item);
       }
-      console.log(toBeRemoved);
     });
     if (toBeRemoved === 0) {
       newCartList.shift();
@@ -94,9 +99,17 @@ const App = () => {
     cleanCart();
   };
 
+  useEffect(() => {
+    let cleanPriceList = cartList.map((item) => {
+      return item.quantity * item.price.replace('$', '');
+    });
+
+    setTotalPrice(cleanPriceList.reduce((prev, current) => prev + current, 0));
+  }, [cartList]);
+
   return (
     <Router>
-      <div className='main-container'>
+      <div className={`${'main-container'} ${background}`}>
         <NavBar toggleCart={toggleCart} globalQuantity={globalQuantity} />
 
         <Routes>
@@ -107,10 +120,14 @@ const App = () => {
                 shopList={shopList}
                 updateCartList={updateCartList}
                 globalQuantity={globalQuantity}
+                updateBackground={updateBackground}
               />
             }
           />
-          <Route path='/' element={<Home />} />
+          <Route
+            path='/'
+            element={<Home updateBackground={updateBackground} />}
+          />
         </Routes>
 
         <ShoppingCart
@@ -118,6 +135,8 @@ const App = () => {
           cartList={cartList}
           modifyCart={modifyCart}
           resetCart={resetCart}
+          totalPrice={totalPrice}
+          toggleCart={toggleCart}
         />
         <Footer />
       </div>

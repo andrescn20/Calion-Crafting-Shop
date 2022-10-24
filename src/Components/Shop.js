@@ -1,8 +1,18 @@
 import React from 'react';
 import styles from '../Styles/shop.module.scss';
 import Product from './Product';
+import { useEffect } from 'react';
 
-const Shop = ({ shopList, updateCartList, globalQuantity }) => {
+const Shop = ({
+  shopList,
+  updateCartList,
+  globalQuantity,
+  updateBackground,
+}) => {
+  useEffect(() => {
+    updateBackground('shop');
+  });
+
   const itemsList = shopList.map((sword) => {
     return (
       <Product

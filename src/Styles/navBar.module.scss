@@ -1,7 +1,7 @@
 @use 'src/index' as general;
 
 .navBar {
-  background-color: #242323;
+  background-color: #3a3838dc;
   // box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.767);
   display: flex;
   align-items: center;
@@ -9,6 +9,7 @@
   gap: 30px;
   grid-area: nav;
   @include general.aniron;
+  height: 7vh;
 }
 .headerLogo {
   height: 1.8rem;
