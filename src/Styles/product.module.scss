@@ -1,6 +1,6 @@
 @use 'src/index' as general;
 
-.product {
+.shopProduct {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
@@ -11,6 +11,7 @@
   @include general.skyrim;
   letter-spacing: 0px;
 }
+
 .productImage {
   width: 75%;
   align-self: center;
@@ -104,4 +105,15 @@
 
 .title {
   grid-column: 1/2;
+}
+
+.cartProduct {
+  background-color: white;
+  height: fit-content;
+}
+
+.cartProductImage {
+  width: 200px;
+  align-self: center;
+  margin-bottom: 10px;
 }

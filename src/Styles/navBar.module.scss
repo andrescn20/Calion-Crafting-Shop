@@ -23,6 +23,7 @@
 .navLinks {
   display: flex;
   width: 40%;
+  align-items: center;
   .link {
     list-style: none;
     color: white;
@@ -40,13 +41,13 @@
   font-size: 1.7rem;
 }
 
-.cart {
+.cartNav {
+  position: relative;
   background-color: transparent;
-  color: white;
   border: none;
   @include general.hobbit;
   font-size: 1.7rem;
-  margin-left: 15%;
+  // margin-left: 15%;
   transition: all 0.2s ease-out;
   z-index: 2;
   &:hover {
@@ -56,8 +57,33 @@
   &:active {
     transform: translateY(-1px);
   }
+  button {
+    background-color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    img {
+      height: 35px;
+    }
+  }
 }
-
+.global {
+  position: absolute;
+  transform: translateX(32px) translateY(-22px);
+  font-weight: bolder;
+  color: white;
+  background-color: black;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  @include general.skyrim;
+  transition: all 0.2s ease-out;
+}
 .pageName {
   display: flex;
   align-items: center;

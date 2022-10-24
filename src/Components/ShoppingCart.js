@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react';
 import styles from '../Styles/shoppingCart.module.scss';
 import CartProduct from './CartProduct';
 
-const ShoppingCart = ({ isCartVisible, cartItems, resetCartItems }) => {
-  const [visibilityClass, setVisibilityClass] = useState(styles.notVisible);
+const ShoppingCart = ({
+  isCartVisible,
+  cartList,
+  updateShopList,
+  globalQuantity,
+}) => {
+  const [visibilityClass, setVisibilityClass] = useState(styles.visible);
 
   useEffect(() => {
     if (isCartVisible === false) {
@@ -14,17 +19,23 @@ const ShoppingCart = ({ isCartVisible, cartItems, resetCartItems }) => {
     }
   }, [isCartVisible]);
 
-  const cartItemsDisplay = cartItems.map((item) => {
-    return <CartProduct key={item.name} {...item} />;
+  const displayCartItems = cartList.map((item) => {
+    return (
+      <CartProduct
+        key={item.name}
+        {...item}
+        updateShopList={updateShopList}
+        origin={'cart'}
+        globalQuantity={globalQuantity}
+      />
+    );
   });
 
-  const emptyCart = () => {
-    resetCartItems();
-  };
+  const emptyCart = () => {};
 
   return (
     <div className={`${styles.shoppingCart} ${visibilityClass}`}>
-      <div className={styles.itemsContainer}>{cartItemsDisplay}</div>
+      <div className={styles.itemsContainer}>{displayCartItems}</div>
       <button className={styles.reset} onClick={emptyCart}>
         Empty Cart
       </button>

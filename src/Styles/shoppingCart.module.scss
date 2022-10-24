@@ -2,8 +2,8 @@
 
 .shoppingCart {
   @include general.hobbit;
-  grid-column: 1/4;
-  grid-row: 1/4;
+  grid-column: 2/4;
+  grid-row: 2/3;
   width: 100vw;
   height: 100%;
   display: flex;
@@ -30,7 +30,6 @@
 }
 
 .itemsContainer {
-  border: 2px red solid;
   height: 85vh;
   width: 50vw;
   display: flex;

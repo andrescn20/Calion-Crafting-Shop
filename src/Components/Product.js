@@ -1,48 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from '../Styles/product.module.scss';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import clickMe from '../click-me.png';
 
-const Product = ({ name, image, price, review, addCartItems, cartItems }) => {
+const Product = ({
+  name,
+  image,
+  price,
+  review,
+  quantity,
+  updateCartList,
+  origin,
+}) => {
   const [reviewVisibility, setReviewVisibility] = useState(styles.notVisible);
-  const [quantity, setQuantity] = useState(0);
-
-  const setVisibilityOn = () => {
-    setReviewVisibility(styles.visible);
-  };
-  const setVisibilityOff = () => {
-    setReviewVisibility(styles.notVisible);
-  };
 
   const handleAddtoCart = () => {
-    setQuantity((quantity) => (quantity = quantity + 1));
+    updateCartList({ name: name, price: price });
   };
 
-  useEffect(() => {
-    let newItem = {
-      name: name,
-      price: price,
-      image: image,
-      quantity: quantity,
-    };
-
-    if (quantity === 1) {
-      addCartItems([...cartItems, newItem]);
-    }
-    if (quantity > 1) {
-      let newList = cartItems.map((item) => {
-        if (item.name === newItem.name) {
-          return newItem;
-        } else {
-          return item;
-        }
-      });
-      addCartItems(newList);
-    }
-  }, [quantity]);
-
+  //Logic for showing and hiding Top Review
+  function setVisibilityOn() {
+    setReviewVisibility(styles.visible);
+  }
+  function setVisibilityOff() {
+    setReviewVisibility(styles.notVisible);
+  }
   return (
-    <div className={styles.product}>
+    <div className={styles.shopProduct}>
       <Zoom>
         <img src={image} alt={name} className={styles.productImage} />
       </Zoom>
@@ -55,13 +40,14 @@ const Product = ({ name, image, price, review, addCartItems, cartItems }) => {
           onMouseLeave={setVisibilityOff}
         >
           <p className={styles.reviewTitle}>Top Review</p>
-          <img src='./Images/click-me.png' alt='clickme' />
+          <img src={clickMe} alt='clickme' />
         </div>
         <button className={styles.addBtn} onClick={handleAddtoCart}>
           Add to Cart
         </button>
       </div>
       <p className={reviewVisibility}>"{review}"</p>
+      <p>{quantity}</p>{' '}
     </div>
   );
 };

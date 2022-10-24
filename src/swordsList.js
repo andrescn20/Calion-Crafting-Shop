@@ -5,6 +5,7 @@ const swords = [
     review: 'Simply amazing. Makes me feel like fighting demons. Love it',
     price: '$1200',
     image: 'https://www.unitedcutlery.com/Images/medres/UC1265.JPG',
+    quantity: 0,
   },
   {
     name: 'Narsil',
@@ -13,6 +14,7 @@ const swords = [
       'Dont buy this product. Mine broke to shards after I accidentaly stepped on it',
     price: '$600',
     image: 'https://www.unitedcutlery.com/Images/medres/UC1267.JPG',
+    quantity: 0,
   },
   {
     name: 'Anduril',
@@ -21,6 +23,7 @@ const swords = [
       'Recieved it as a replacement for my broken Narsil. Well crafted. Now I feel like Im the King',
     price: '$800',
     image: 'https://www.unitedcutlery.com/Images/medres/UC1380.JPG',
+    quantity: 0,
   },
   {
     name: 'Sting',
@@ -28,6 +31,7 @@ const swords = [
     review: 'Beautiful sword. Glows blue when my wife is near.',
     price: '$700',
     image: 'https://www.unitedcutlery.com/Images/medres/UC1264.JPG',
+    quantity: 0,
   },
   {
     name: 'Herugrim',
@@ -35,6 +39,7 @@ const swords = [
     review: 'A kings sowrd. ',
     price: '$600',
     image: 'https://www.unitedcutlery.com/Images/medres/UC1370ABNB_1.JPG',
+    quantity: 0,
   },
   {
     name: 'Gurthang',
@@ -42,7 +47,8 @@ const swords = [
     review:
       'Strange sword. Makes me feel uneasy... like it is going to betray me.',
     price: '$1500',
-    image: './Images/Gurthang.jpeg',
+    image: require('./Gurthang.jpeg'),
+    quantity: 0,
   },
 ];
 

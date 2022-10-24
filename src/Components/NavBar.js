@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
 import styles from '../Styles/navBar.module.scss';
 import { Link } from 'react-router-dom';
+import wagon from '../wagon.png';
 
-const NavBar = ({ toggleCart }) => {
+const NavBar = ({ toggleCart, globalQuantity }) => {
   return (
     <div className={styles.navBar}>
       <div className={styles.pageName}>
         <img
-          src={'./Images/logo-black.png'}
+          src={require('../logo-black.png')}
           alt='Calion-Crafting-Logo'
           className={styles.headerLogo}
         />
@@ -20,10 +20,17 @@ const NavBar = ({ toggleCart }) => {
         <Link to='/shop'>
           <li className={styles.link}> Products </li>
         </Link>
-        <button className={styles.cart} onClick={toggleCart}>
-          {' '}
-          Cart{' '}
-        </button>
+
+        <div className={styles.cartNav}>
+          <button className={styles.cart} onClick={toggleCart}>
+            <img src={wagon} alt='Cart' />
+          </button>
+          {globalQuantity === 0 ? (
+            ''
+          ) : (
+            <div className={styles.global}>{globalQuantity}</div>
+          )}
+        </div>
       </ul>
     </div>
   );

@@ -1,7 +1,6 @@
-// import React, { useState } from 'react';
 import styles from '../Styles/cartProduct.module.scss';
 
-const cartProduct = ({ name, image, price, quantity }) => {
+const CartProduct = ({ name, price, image, quantity }) => {
   return (
     <div className={styles.cartProduct}>
       <img src={image} alt={name} className={styles.productImage} />
@@ -12,7 +11,6 @@ const cartProduct = ({ name, image, price, quantity }) => {
 
       <p>{quantity}</p>
 
-      <button className={styles.addBtn}>Add to Cart</button>
       <form className={styles.cartOptions}>
         <div className={styles.inputTextContainer}>
           <input type='number' className={styles.textInput}></input>
@@ -28,4 +26,4 @@ const cartProduct = ({ name, image, price, quantity }) => {
   );
 };
 
-export default cartProduct;
+export default CartProduct;
