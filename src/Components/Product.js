@@ -4,19 +4,11 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import clickMe from '../click-me.png';
 
-const Product = ({
-  name,
-  image,
-  price,
-  review,
-  quantity,
-  updateCartList,
-  origin,
-}) => {
+const Product = ({ name, image, price, review, updateCartList }) => {
   const [reviewVisibility, setReviewVisibility] = useState(styles.notVisible);
 
   const handleAddtoCart = () => {
-    updateCartList({ name: name, price: price });
+    updateCartList({ name: name, price: price, image: image });
   };
 
   //Logic for showing and hiding Top Review
@@ -47,7 +39,6 @@ const Product = ({
         </button>
       </div>
       <p className={reviewVisibility}>"{review}"</p>
-      <p>{quantity}</p>{' '}
     </div>
   );
 };

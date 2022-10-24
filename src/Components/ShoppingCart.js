@@ -5,7 +5,8 @@ import CartProduct from './CartProduct';
 const ShoppingCart = ({
   isCartVisible,
   cartList,
-  updateShopList,
+  modifyCart,
+  resetCart,
   globalQuantity,
 }) => {
   const [visibilityClass, setVisibilityClass] = useState(styles.visible);
@@ -24,19 +25,16 @@ const ShoppingCart = ({
       <CartProduct
         key={item.name}
         {...item}
-        updateShopList={updateShopList}
-        origin={'cart'}
+        modifyCart={modifyCart}
         globalQuantity={globalQuantity}
       />
     );
   });
 
-  const emptyCart = () => {};
-
   return (
     <div className={`${styles.shoppingCart} ${visibilityClass}`}>
       <div className={styles.itemsContainer}>{displayCartItems}</div>
-      <button className={styles.reset} onClick={emptyCart}>
+      <button className={styles.reset} onClick={resetCart}>
         Empty Cart
       </button>
     </div>

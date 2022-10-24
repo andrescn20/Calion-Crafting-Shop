@@ -9,7 +9,6 @@ const Shop = ({ shopList, updateCartList, globalQuantity }) => {
         key={sword.name}
         {...sword}
         updateCartList={updateCartList}
-        origin={'shop'}
         globalQuantity={globalQuantity}
       />
     );

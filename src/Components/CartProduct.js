@@ -1,6 +1,12 @@
 import styles from '../Styles/cartProduct.module.scss';
 
-const CartProduct = ({ name, price, image, quantity }) => {
+const CartProduct = ({ name, price, image, quantity, modifyCart }) => {
+  const adjutsQuantity = (e) => {
+    modifyCart(
+      { name: name, price: price, image: image },
+      Number(e.target.value)
+    );
+  };
   return (
     <div className={styles.cartProduct}>
       <img src={image} alt={name} className={styles.productImage} />
@@ -14,10 +20,20 @@ const CartProduct = ({ name, price, image, quantity }) => {
       <form className={styles.cartOptions}>
         <div className={styles.inputTextContainer}>
           <input type='number' className={styles.textInput}></input>
-          <button type='button' className={styles.adjustButton}>
+          <button
+            type='button'
+            value={1}
+            className={styles.adjustButton}
+            onClick={adjutsQuantity}
+          >
             +
           </button>
-          <button type='button' className={styles.adjustButton}>
+          <button
+            type='button'
+            value={-1}
+            className={styles.adjustButton}
+            onClick={adjutsQuantity}
+          >
             -
           </button>
         </div>

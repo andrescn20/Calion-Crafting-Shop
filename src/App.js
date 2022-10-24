@@ -6,11 +6,10 @@ import Home from './Components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import swords from './swordsList';
 import { useEffect, useState } from 'react';
-import { type } from '@testing-library/user-event/dist/type';
 
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const [shopList, setShopList] = useState(swords); //Creates a copy of the external product List for app usage
+  const [shopList] = useState(swords); //Creates a copy of the external product List for app usage
   const [globalQuantity, setGlobalQuantity] = useState(0);
   const [cartList, setCartList] = useState([]);
 
@@ -42,24 +41,57 @@ const App = () => {
     setCartList(newCartList);
   };
 
-  // useEffect(() => console.log(cartList), [cartList]);
+  const modifyCart = (currentItem, btnSelection) => {
+    let newCartList = cartList.map((item) => {
+      if (item.name === currentItem.name) {
+        return { ...item, quantity: item.quantity + Number(btnSelection) };
+      } else {
+        return { ...item };
+      }
+    });
+
+    let toBeRemoved;
+
+    newCartList.forEach((item) => {
+      if (item.quantity <= 0) {
+        toBeRemoved = newCartList.indexOf(item);
+      }
+      console.log(toBeRemoved);
+    });
+    if (toBeRemoved === 0) {
+      newCartList.shift();
+      setCartList(newCartList);
+    }
+    if (toBeRemoved > 0) {
+      newCartList.splice(toBeRemoved, 1);
+      setCartList(newCartList);
+    } else {
+      setCartList(newCartList);
+    }
+  };
 
   useEffect(() => {
-    const quantityArray = shopList.map((item) => {
+    const quantityArray = cartList.map((item) => {
       return item.quantity;
     });
     const newGlobalQuantity = quantityArray.reduce(
-      (prev, current) => prev + current
+      (prev, current) => prev + current,
+      0
     );
     setGlobalQuantity(newGlobalQuantity);
-  }, [shopList]);
+  }, [cartList]);
+
+  const cleanCart = () => {
+    setCartList([]);
+  };
 
   const resetCart = () => {
     const reset = cartList.map((item) => {
       return { ...item, quantity: 0 };
     });
 
-    setShopList(reset);
+    setCartList(reset);
+    cleanCart();
   };
 
   return (
@@ -84,7 +116,8 @@ const App = () => {
         <ShoppingCart
           isCartVisible={isCartVisible}
           cartList={cartList}
-          resetCartItems={resetCart}
+          modifyCart={modifyCart}
+          resetCart={resetCart}
         />
         <Footer />
       </div>
