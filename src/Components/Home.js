@@ -26,7 +26,10 @@ const Home = ({ updateBackground }) => {
           PREORDER
         </button>
       </div>
-      <div className={`${styles.preorderContainer} ${preorderVisibility}`}>
+      <div
+        className={`${styles.preorderContainer} ${preorderVisibility}`}
+        onClick={closePreorder}
+      >
         <div className={styles.preorderDiv}>
           <button className={styles.closePreorder} onClick={closePreorder}>
             Close

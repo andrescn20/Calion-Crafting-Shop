@@ -34,6 +34,27 @@
   align-items: center;
 }
 
+$preorder-width: 450px;
+$preorder-height: 200px;
+
+.preorderContainer {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 93vh;
+  width: 100vw;
+  &.visible {
+    background-color: rgba(10, 10, 10, 0.564);
+  }
+  &.notVisible {
+    visibility: hidden;
+  }
+  &:hover {
+    cursor: url('../close-window-16.png'), pointer;
+  }
+}
+
 .preOrder {
   border: none;
   color: black;
@@ -59,24 +80,6 @@
   }
 }
 
-$preorder-width: 450px;
-$preorder-height: 200px;
-
-.preorderContainer {
-  position: absolute;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 93vh;
-  width: 100vw;
-  &.visible {
-    background-color: rgba(10, 10, 10, 0.564);
-  }
-  &.notVisible {
-    visibility: hidden;
-  }
-}
-
 .preorderDiv {
   margin-top: 10%;
   display: flex;
@@ -91,10 +94,12 @@ $preorder-height: 200px;
   padding-top: 3px;
   color: black;
   background-color: white;
+  cursor: pointer;
   p {
     flex-grow: 1;
     line-height: 22px;
     font-size: 1.2rem;
+    margin-top: 10px;
     span {
       font-weight: bold;
     }
