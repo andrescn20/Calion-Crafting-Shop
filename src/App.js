@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import swords from './swordsList';
 import { useEffect, useState } from 'react';
+
 const App = () => {
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [shopList] = useState(swords); //Creates a copy of the external product List for app usage
@@ -107,9 +108,18 @@ const App = () => {
     setTotalPrice(cleanPriceList.reduce((prev, current) => prev + current, 0));
   }, [cartList]);
 
+  //Closes Cart with Keyboard
+  const closeCartEsc = (event) => {
+    if ((event.key === 'Escape') & (isCartVisible === true)) {
+      toggleCart();
+    }
+  };
   return (
-    <Router>
-      <div className={`${'main-container'} ${background}`}>
+    <Router basename='/Calion-Crafting-Shop'>
+      <div
+        className={`${'main-container'} ${background}`}
+        onKeyDown={closeCartEsc}
+      >
         <NavBar toggleCart={toggleCart} globalQuantity={globalQuantity} />
 
         <Routes>

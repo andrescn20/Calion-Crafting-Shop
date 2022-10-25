@@ -75,6 +75,10 @@
   }
   &:active {
     transform: translateY(-1px);
+    border: none;
+  }
+  &:focus {
+    border: none;
   }
   button {
     background-color: white;
@@ -86,6 +90,10 @@
       height: 35px;
     }
   }
+}
+
+.cart:active {
+  border: none;
 }
 
 .globalQuantity {

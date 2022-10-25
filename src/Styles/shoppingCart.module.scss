@@ -5,7 +5,7 @@
   grid-column: 1/4;
   grid-row: 1/4;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
   justify-content: flex-start;
   // z-index: 0;
@@ -27,6 +27,14 @@
   }
   &.notVisible {
     visibility: hidden;
+  }
+}
+.emptyDiv {
+  flex-grow: 1;
+  height: 100vh;
+  background-color: transparent;
+  &:hover {
+    cursor: url('../close-window-16.png'), pointer;
   }
 }
 
@@ -65,7 +73,8 @@
 }
 .reset,
 .checkout,
-.closeCart {
+.closeCart,
+.closeCheckout {
   @include general.generalFont;
   border: none;
   color: white;
@@ -110,4 +119,42 @@
   width: calc(25vw + 20px);
   color: black;
   background-color: white;
+}
+$checkout-width: 400px;
+$checkout-height: 200px;
+
+.checkoutDiv {
+  border-radius: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: $checkout-width;
+  height: $checkout-height;
+  left: calc(50vw - ($checkout-width) / 2);
+  top: calc(40vh - ($checkout-height) / 2);
+  padding: 20px;
+  padding-top: 3px;
+  &.visible {
+    background-color: white;
+  }
+  &.notVisible {
+    visibility: hidden;
+  }
+  p {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 22px;
+    font-size: 1.2rem;
+  }
+}
+
+.closeCheckout {
+  color: black;
+  background-color: white;
+  width: 100%;
+  font-size: 1.2rem;
 }
