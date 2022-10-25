@@ -10,6 +10,7 @@ const ShoppingCart = ({
   globalQuantity,
   totalPrice,
   toggleCart,
+  checkout,
 }) => {
   const [visibilityClass, setVisibilityClass] = useState(styles.visible);
 
@@ -41,14 +42,17 @@ const ShoppingCart = ({
         <div className={styles.products}> {displayCartItems}</div>
         <div className={styles.cartControls}>
           <p className={styles.totalPrice}>{'Total: $' + totalPrice}</p>
+          <button className={styles.checkout} onClick={checkout}>
+            Checkout
+          </button>
           <button className={styles.reset} onClick={resetCart}>
             Empty Cart
           </button>
-          <button className={styles.closeCart} onClick={toggleCart}>
-            Close Cart
-          </button>
         </div>
       </div>
+      <button className={styles.closeCart} onClick={toggleCart}>
+        Close Cart
+      </button>
     </div>
   );
 };

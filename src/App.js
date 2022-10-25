@@ -125,7 +125,7 @@ const App = () => {
             }
           />
           <Route
-            path='/'
+            path=''
             element={<Home updateBackground={updateBackground} />}
           />
         </Routes>

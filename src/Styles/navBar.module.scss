@@ -2,30 +2,50 @@
 
 .navBar {
   background-color: #3a3838dc;
-  // box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.767);
+  box-shadow: 1px 1px 3px 2px rgba(5, 5, 5, 0.246);
   display: flex;
   align-items: center;
-  justify-content: space-around;
   gap: 30px;
   grid-area: nav;
-  @include general.aniron;
+
   height: 7vh;
 }
+
+.calionCrafting {
+  flex-grow: 1;
+  height: 80%;
+}
+
+.actionContainer {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .headerLogo {
-  height: 1.8rem;
+  height: 95%;
+  margin: 0px 20px 0 40px;
 }
 
 .headerText {
   color: white;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 500;
+  @include general.girassol;
+  font-size: 1.8rem;
 }
 
 .navLinks {
   display: flex;
-  width: 40%;
   align-items: center;
-  .link {
+
+  width: 40%;
+  a {
+    width: fit-content;
+    margin-right: 20%;
     list-style: none;
     color: white;
     transition: all 0.2s ease-out;
@@ -38,7 +58,7 @@
       transform: translateY(-1px);
     }
   }
-  @include general.hobbit;
+  @include general.girassol;
   font-size: 1.7rem;
 }
 
@@ -48,9 +68,7 @@
   border: none;
   @include general.hobbit;
   font-size: 1.7rem;
-  // margin-left: 15%;
   transition: all 0.2s ease-out;
-  z-index: 2;
   &:hover {
     cursor: pointer;
     transform: scale(1.2);
@@ -69,7 +87,8 @@
     }
   }
 }
-.global {
+
+.globalQuantity {
   position: absolute;
   transform: translateX(32px) translateY(-22px);
   font-weight: bolder;
@@ -80,22 +99,8 @@
   border-radius: 50%;
   font-size: 1rem;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   @include general.skyrim;
   transition: all 0.2s ease-out;
-}
-.pageName {
-  display: flex;
-  align-items: center;
-  width: 20%;
-  justify-content: space-around;
-  height: 80%;
-}
-
-.headerText {
-  font-size: 1.5rem;
-}
-.headerLogo {
-  height: 95%;
 }

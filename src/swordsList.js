@@ -36,7 +36,7 @@ const swords = [
   {
     name: 'Herugrim',
     rating: 4,
-    review: 'A kings sowrd. ',
+    review: 'A kings sword. ',
     price: '$600',
     image: 'https://www.unitedcutlery.com/Images/medres/UC1370ABNB_1.JPG',
     quantity: 0,

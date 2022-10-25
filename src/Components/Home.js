@@ -8,7 +8,7 @@ const Home = ({ updateBackground }) => {
     <div className={styles.home}>
       <div className={styles.homeText}>
         <h1>
-          SKYRIM : <span>Daedric Collection</span>
+          <span>SKYRIM </span> <br></br>Daedric Collection
         </h1>
 
         <button className={styles.preOrder}>PREORDER</button>
