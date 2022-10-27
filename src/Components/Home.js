@@ -19,15 +19,15 @@ const Home = ({ updateBackground }) => {
     <div className={styles.home}>
       <div className={styles.homeText}>
         <h1>
-          <span>SKYRIM </span> <br></br>Daedric Collection
+          <span>SKYRIM </span> <br></br> <p>Daedric Collection</p>
         </h1>
 
-        <button className={styles.preOrder} onClick={openPreorder}>
+        <button className={styles.preOrderBtn} onClick={openPreorder}>
           PREORDER
         </button>
       </div>
       <div
-        className={`${styles.preorderContainer} ${preorderVisibility}`}
+        className={`${styles.preorderMsgContainer} ${preorderVisibility}`}
         onClick={closePreorder}
       >
         <div className={styles.preorderDiv}>

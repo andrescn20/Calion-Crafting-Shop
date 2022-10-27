@@ -52,8 +52,11 @@ const ShoppingCart = ({
   };
   return (
     <div className={`${styles.shoppingCart} ${visibilityClass}`}>
-      <div className={styles.emptyDiv} onClick={divClick}></div>
-      <div className={styles.cartContainer}>
+      <div
+        className={`${styles.emptyDiv} ${visibilityClass}`}
+        onClick={divClick}
+      ></div>
+      <div className={`${styles.cartContainer} ${visibilityClass}`}>
         <div className={styles.products}> {displayCartItems}</div>
         <div className={styles.cartControls}>
           <p className={styles.totalPrice}>{'Total: $' + totalPrice}</p>

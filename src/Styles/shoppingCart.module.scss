@@ -1,35 +1,99 @@
 @use 'src/index' as general;
 
+$checkout-width: 400px;
+$checkout-height: 200px;
+
+@keyframes cartContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  50% {
+    opacity: 60;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes cartContentOut {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes cartBackgroundIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+  50% {
+    opacity: 60;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes cartBackgroundOut {
+  from {
+    opacity: 100;
+  }
+  50% {
+    opacity: 40;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+}
 .shoppingCart {
   @include general.generalFont;
   grid-column: 1/4;
   grid-row: 1/4;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   position: relative;
   overflow: auto;
   right: 0;
-  background: rgba(10, 10, 10, 0.564);
+  overflow: hidden;
   &.visible {
     visibility: visible;
-    background-position: left bottom;
   }
   &.notVisible {
+    transition-delay: 0.6s;
+    transition-timing-function: ease-out;
     visibility: hidden;
   }
 }
+
 .emptyDiv {
-  flex-grow: 1;
+  grid-row: 1/2;
+  grid-column: 1/4;
   height: 100vh;
-  background-color: transparent;
+  background: rgba(10, 10, 10, 0.564);
   &:hover {
     cursor: url('../close-window-16.png'), pointer;
+  }
+  &.visible {
+    animation: cartBackgroundIn;
+    animation-duration: 0.65s;
+    animation-timing-function: ease-out;
+  }
+  &.notVisible {
+    animation: cartBackgroundOut;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in;
   }
 }
 
 .cartContainer {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  // transform: translateY(105vh);
+  will-change: transform;
   width: 25vw;
   display: flex;
   flex-direction: column;
@@ -37,11 +101,20 @@
   justify-content: space-between;
   background-color: white;
   padding: 20px;
-  height: 100%;
-  transition: all ease-out;
-  max-height: 100vh;
+  height: 95vh;
+  // max-height: 100vh;
   button {
     width: 50%;
+  }
+  &.visible {
+    animation: cartContentIn;
+    animation-duration: 0.65s;
+    animation-delay: 0.7s;
+    animation-fill-mode: backwards;
+  }
+  &.notVisible {
+    animation: cartContentOut;
+    animation-duration: 0.78s;
   }
 }
 
@@ -110,9 +183,8 @@
   width: calc(25vw + 20px);
   color: black;
   background-color: white;
+  opacity: 0;
 }
-$checkout-width: 400px;
-$checkout-height: 200px;
 
 .checkoutDiv {
   border-radius: 5px;

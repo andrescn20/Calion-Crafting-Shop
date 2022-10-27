@@ -32,12 +32,12 @@
   grid-template-rows: 7vh minmax(88vh, 1fr) 5vh;
 
   &.home {
-    background-image: url(https://i.pinimg.com/originals/d0/93/18/d093181dea29e7bc603a1a0dfb9231b5.jpg);
+    background-image: url('./daedric.jpg');
     background-position: 30% 55%;
     background-size: cover;
   }
   &.shop {
-    background-image: url(https://images5.alphacoders.com/614/614690.jpg);
+    background-image: url('./imladris.jpg');
     background-size: 120%;
     background-position: 0% 20%;
     background-size: cover;

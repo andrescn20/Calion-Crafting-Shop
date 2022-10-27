@@ -1,6 +1,16 @@
 @use 'src/index' as general;
-
+@keyframes products {
+  from {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+  to {
+    opacity: 100;
+  }
+}
 .shopProduct {
+  animation: products;
+  animation-duration: 1.2s;
   display: flex;
   flex-direction: column;
   border-radius: 8px;

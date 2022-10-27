@@ -1,9 +1,7 @@
 @use 'src/index' as general;
 
-$preorder-width: 450px;
-$preorder-height: 200px;
-
 .home {
+  background-image: url('./Images/daedric.jpg');
   grid-column: 1/4;
   grid-row: 2/4;
   color: white;
@@ -21,6 +19,10 @@ $preorder-height: 200px;
     font-weight: 500;
     letter-spacing: 1px;
   }
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .homeText {
@@ -31,69 +33,12 @@ $preorder-height: 200px;
   flex-direction: column;
   justify-content: flex-center;
   align-items: center;
-  animation-delay: 2s;
-  span {
-    animation: skyrim;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-  }
-  p {
-    animation: skyrim;
-    animation-duration: 2.7s;
-    animation-timing-function: cubic-bezier(1, 0, 0.28, 0.7);
-    animation-iteration-count: 1;
-  }
 }
 
-@keyframes skyrim {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100;
-  }
-}
-@keyframes preOrderBtn {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    opacity: 100;
-  }
-}
-.preOrderBtn {
-  animation: preOrderBtn;
-  animation-delay: 5.5s;
-  animation-duration: 1.2s;
-  animation-fill-mode: backwards;
-  border: none;
-  color: black;
-  background-color: white;
-  width: 150px;
-  height: 3.2rem;
-  font-size: 1.4rem;
-  font-weight: 550;
-  @include general.generalFont;
-  letter-spacing: 1.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-  animation-delay: 2s;
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-3px);
-    box-shadow: 4px 5px 2px rgb(0, 0, 0);
-  }
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 3px 4px 2px rgb(0, 0, 0);
-  }
-}
+$preorder-width: 450px;
+$preorder-height: 200px;
 
-.preorderMsgContainer {
+.preorderContainer {
   position: absolute;
   display: flex;
   align-items: flex-start;
@@ -108,6 +53,31 @@ $preorder-height: 200px;
   }
   &:hover {
     cursor: url('../close-window-16.png'), pointer;
+  }
+}
+
+.preOrder {
+  border: none;
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: 3.2rem;
+  font-size: 1.4rem;
+  font-weight: 550;
+  @include general.generalFont;
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 4px 5px 2px rgb(0, 0, 0);
+  }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 3px 4px 2px rgb(0, 0, 0);
   }
 }
 
