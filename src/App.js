@@ -8,7 +8,7 @@ import swords from './swordsList';
 import { useEffect, useState } from 'react';
 
 const App = () => {
-  const [isCartVisible, setIsCartVisible] = useState(false);
+  const [isCartVisible, setIsCartVisible] = useState('start');
   const [shopList] = useState(swords); //Creates a copy of the external product List for app usage
   const [globalQuantity, setGlobalQuantity] = useState(0);
   const [cartList, setCartList] = useState([]);
@@ -17,7 +17,11 @@ const App = () => {
 
   //Set visitbility of Cart on/off. Cart is not rendered but showed or hidden
   const toggleCart = () => {
-    setIsCartVisible(!isCartVisible);
+    if (isCartVisible === 'start') {
+      setIsCartVisible(true);
+    } else {
+      setIsCartVisible(!isCartVisible);
+    }
   };
 
   //Changes Classes to update Background dependant of page

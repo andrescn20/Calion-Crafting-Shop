@@ -59,6 +59,9 @@ $checkout-height: 200px;
   overflow: auto;
   right: 0;
   overflow: hidden;
+  &.start {
+    z-index: -1;
+  }
   &.visible {
     visibility: visible;
   }

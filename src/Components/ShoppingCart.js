@@ -11,7 +11,7 @@ const ShoppingCart = ({
   totalPrice,
   toggleCart,
 }) => {
-  const [visibilityClass, setVisibilityClass] = useState(styles.visible);
+  const [visibilityClass, setVisibilityClass] = useState(styles.notVisible);
   const [checkoutVisibility, setCheckoutVisibility] = useState(
     styles.notVisible
   );

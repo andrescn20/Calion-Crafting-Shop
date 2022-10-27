@@ -31,15 +31,18 @@ $preorder-height: 200px;
   flex-direction: column;
   justify-content: flex-center;
   align-items: center;
-  animation-delay: 2s;
   span {
     animation: skyrim;
-    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    // animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
   }
   p {
     animation: skyrim;
+    // animation-delay: 1s;
+    animation-fill-mode: backwards;
     animation-duration: 2.7s;
     animation-timing-function: cubic-bezier(1, 0, 0.28, 0.7);
     animation-iteration-count: 1;
@@ -65,8 +68,8 @@ $preorder-height: 200px;
 }
 .preOrderBtn {
   animation: preOrderBtn;
-  animation-delay: 5.5s;
-  animation-duration: 1.2s;
+  animation-duration: 1.4s;
+  animation-delay: 6s;
   animation-fill-mode: backwards;
   border: none;
   color: black;
