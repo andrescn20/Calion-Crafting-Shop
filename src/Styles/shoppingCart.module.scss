@@ -8,19 +8,10 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-start;
-  // z-index: 0;
   position: relative;
   overflow: auto;
   right: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10, 10, 10, 0.564) 50%,
-    transparent 50%
-  );
-
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 0.5s ease-out;
+  background: rgba(10, 10, 10, 0.564);
   &.visible {
     visibility: visible;
     background-position: left bottom;
@@ -85,7 +76,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.18s;
   &:hover {
     cursor: pointer;
     transform: translateY(-3px);

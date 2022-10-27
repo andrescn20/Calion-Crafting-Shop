@@ -49,7 +49,6 @@
     list-style: none;
     color: white;
     transition: all 0.2s ease-out;
-
     &:hover {
       cursor: pointer;
       transform: scale(1.2);
@@ -88,6 +87,9 @@
     border: none;
     img {
       height: 35px;
+    }
+    &:hover {
+      cursor: pointer;
     }
   }
 }
