@@ -36,7 +36,9 @@ const NavBar = ({ toggleCart, globalQuantity }) => {
           {globalQuantity === 0 ? (
             ''
           ) : (
-            <div className={styles.globalQuantity}>{globalQuantity}</div>
+            <div key={globalQuantity} className={styles.globalQuantity}>
+              {globalQuantity}
+            </div>
           )}
         </div>
       </ul>
