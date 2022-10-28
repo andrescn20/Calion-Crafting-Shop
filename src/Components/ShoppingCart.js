@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../Styles/shoppingCart.module.scss';
 import CartProduct from './CartProduct';
-import close from '../close-black.png';
+import close from '../Images/close-black.png';
 
 const ShoppingCart = ({
   isCartVisible,

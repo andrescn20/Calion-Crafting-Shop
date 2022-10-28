@@ -1,6 +1,6 @@
 import styles from '../Styles/navBar.module.scss';
 import { Link } from 'react-router-dom';
-import wagon from '../wagon.png';
+import wagon from '../Images/wagon.png';
 
 const NavBar = ({ toggleCart, globalQuantity }) => {
   return (
@@ -8,7 +8,7 @@ const NavBar = ({ toggleCart, globalQuantity }) => {
       <div className={styles.calionCrafting}>
         <Link to='/' className={styles.actionContainer}>
           <img
-            src={require('../logo-black.png')}
+            src={require('../Images/logo-black.png')}
             alt='Calion-Crafting-Logo'
             className={styles.headerLogo}
           />

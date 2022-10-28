@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../Styles/product.module.scss';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
-import clickMe from '../click-me.png';
+import clickMe from '../Images/click-me.png';
 
 const Product = ({ name, image, price, review, updateCartList }) => {
   const [reviewVisibility, setReviewVisibility] = useState(styles.notVisible);

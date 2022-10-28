@@ -113,7 +113,7 @@ $checkout-height: 200px;
   // height: 100vh;
   background: rgba(10, 10, 10, 0.564);
   &:hover {
-    cursor: url('../close-window-16.png'), pointer;
+    cursor: url('../Images/close-window-16.png'), pointer;
   }
   &.visible {
     animation: cartBackgroundIn;

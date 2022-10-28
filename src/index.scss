@@ -33,12 +33,12 @@
   height: 100vh;
 
   &.home {
-    background-image: url('./daedric.jpg');
+    background-image: url('./Images/daedric.jpg');
     background-position: 30% 55%;
     background-size: cover;
   }
   &.shop {
-    background-image: url('./imladris.jpg');
+    background-image: url('./Images/imladris.jpg');
     background-position: 0% 20%;
     background-size: cover;
   }
@@ -62,7 +62,7 @@
 @media (max-width: 800px) {
   .main-container {
     &.home {
-      background-image: url('./daedric-90deg.jpg');
+      background-image: url('./Images/daedric-90deg.jpg');
       background-position: 70% 55%;
       background-size: 200%;
     }

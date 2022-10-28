@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../Styles/home.module.scss';
-import close from '../close-black.png';
+import close from '../Images/close-black.png';
 
 const Home = ({ updateBackground }) => {
   const [preorderVisibility, setPreorderVisibility] = useState(
