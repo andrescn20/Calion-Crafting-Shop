@@ -2,14 +2,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-area: foo;
+  grid-area: footer;
 }
 
 a {
   display: flex;
   align-items: center;
   gap: 12px;
-  height: 100%;
+  // height: 100%;
   width: 100%;
   justify-content: center;
   text-decoration: none;

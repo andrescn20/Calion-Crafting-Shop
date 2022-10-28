@@ -8,6 +8,7 @@
     opacity: 100;
   }
 }
+
 .shopProduct {
   animation: products;
   animation-duration: 1.2s;
@@ -20,7 +21,28 @@
   background-color: white;
   @include general.girassol;
   letter-spacing: 1.2px;
-  height: 360px;
+  // height: 360px;
+}
+
+@media (max-width: 600px) {
+  .shopProduct {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    font-size: 1rem;
+    .flexContainer {
+      h2 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+    }
+    .review {
+      height: 20%;
+    }
+    .productImage {
+      width: 35vw;
+    }
+  }
 }
 
 .productImage {
@@ -39,18 +61,6 @@
   font-weight: 500;
   font-size: 1.5rem;
 }
-.ratingContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    height: 1.2rem;
-  }
-  p {
-    flex-grow: 1;
-    margin-left: 4px;
-  }
-}
 
 .reviewContainer {
   display: flex;
@@ -63,6 +73,7 @@
   }
   grid-column: 1/2;
 }
+
 .notVisible {
   visibility: hidden;
 }
@@ -71,8 +82,7 @@
   visibility: visible;
 }
 
-.visible,
-.notVisible {
+.review {
   position: absolute;
   width: 210px;
   height: 200px;

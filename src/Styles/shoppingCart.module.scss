@@ -49,11 +49,13 @@ $checkout-height: 200px;
     transform: translateX(-100vw);
   }
 }
+
 .shoppingCart {
   @include general.generalFont;
   grid-column: 1/4;
   grid-row: 1/4;
   display: grid;
+  grid-template-areas: 'div' 'cart';
   grid-template-columns: 3fr 1fr;
   position: relative;
   overflow: auto;
@@ -72,9 +74,18 @@ $checkout-height: 200px;
   }
 }
 
+@media (max-width: 1200px) {
+  .shoppingCart {
+    grid-row: 1/4;
+    grid-column: 1/2;
+    grid-template-areas: 'div' 'cart';
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .emptyDiv {
   grid-row: 1/2;
-  grid-column: 1/4;
+  grid-column: 1/2;
   height: 100vh;
   background: rgba(10, 10, 10, 0.564);
   &:hover {
@@ -94,7 +105,7 @@ $checkout-height: 200px;
 
 .cartContainer {
   grid-row: 1/2;
-  grid-column: 3/4;
+  grid-column: 2/3;
   // transform: translateY(105vh);
   will-change: transform;
   width: 25vw;
@@ -186,7 +197,7 @@ $checkout-height: 200px;
   width: calc(25vw + 20px);
   color: black;
   background-color: white;
-  opacity: 0;
+  opacity: 100;
 }
 
 .checkoutDiv {

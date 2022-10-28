@@ -27,7 +27,7 @@
 .main-container {
   overflow-x: hidden;
   display: grid;
-  grid-template-areas: 'nav nav nav' 'left main right' 'foo foo foo';
+  grid-template-areas: 'nav nav nav' 'left main right' 'footer footer footer';
   grid-template-columns: 1fr 4fr 1fr;
   grid-template-rows: 7vh minmax(88vh, 1fr) 5vh;
 
@@ -38,9 +38,23 @@
   }
   &.shop {
     background-image: url('./imladris.jpg');
-    background-size: 120%;
     background-position: 0% 20%;
     background-size: cover;
+  }
+}
+@media (max-width: 1200px) {
+  .main-container {
+    grid-template-areas: 'nav' 'main' 'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 100px;
+  }
+  .home,
+  .producst,
+  .shop {
+    grid-area: main;
+  }
+  .navBar {
+    grid-area: nav;
   }
 }
 

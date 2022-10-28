@@ -38,7 +38,7 @@ const Product = ({ name, image, price, review, updateCartList }) => {
           Add to Cart
         </button>
       </div>
-      <p className={reviewVisibility}>"{review}"</p>
+      <p className={`${styles.review} ${reviewVisibility}`}>"{review}"</p>
     </div>
   );
 };

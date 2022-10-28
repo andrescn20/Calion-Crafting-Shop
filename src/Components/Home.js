@@ -17,7 +17,7 @@ const Home = ({ updateBackground }) => {
 
   return (
     <div className={styles.home}>
-      <div className={styles.homeText}>
+      <div className={styles.homeMainContent}>
         <h1>
           <span>SKYRIM </span> <br></br> <p>Daedric Collection</p>
         </h1>
@@ -30,8 +30,8 @@ const Home = ({ updateBackground }) => {
         className={`${styles.preorderMsgContainer} ${preorderVisibility}`}
         onClick={closePreorder}
       >
-        <div className={styles.preorderDiv}>
-          <button className={styles.closePreorder} onClick={closePreorder}>
+        <div className={styles.preorderContainer}>
+          <button className={styles.closePreorderBtn} onClick={closePreorder}>
             Close
           </button>
           <p>
