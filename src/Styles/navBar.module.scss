@@ -39,14 +39,10 @@
     margin: 0;
     padding: 0;
     padding-top: 5px;
+    padding-bottom: 3px;
     .navLinks {
       gap: 20px;
       font-size: 1.5rem;
-    }
-    .calionCrafting {
-      img {
-        size: 3px;
-      }
     }
   }
 }
@@ -72,7 +68,7 @@
 .navLinksContainer {
   display: flex;
   align-items: center;
-  @include general.girassol;
+  @include general.hobbit;
   font-size: 1.7rem;
   a {
     width: fit-content;
@@ -98,7 +94,6 @@
   position: relative;
   background-color: transparent;
   border: none;
-  @include general.hobbit;
   font-size: 1.7rem;
   transition: all 0.2s ease-out;
   &:hover {

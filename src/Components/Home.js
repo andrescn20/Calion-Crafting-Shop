@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../Styles/home.module.scss';
+import close from '../close-black.png';
 
 const Home = ({ updateBackground }) => {
   const [preorderVisibility, setPreorderVisibility] = useState(
@@ -30,13 +31,14 @@ const Home = ({ updateBackground }) => {
         className={`${styles.preorderMsgContainer} ${preorderVisibility}`}
         onClick={closePreorder}
       >
-        <div className={styles.preorderContainer}>
+        <div className={`${styles.preorderPopUp} ${preorderVisibility}`}>
           <button className={styles.closePreorderBtn} onClick={closePreorder}>
-            Close
+            <img src={close} alt='Close Button' />
           </button>
           <p>
-            Important Message: Since the Oblivion Crisis was resolved, the
-            'production' of Daedric Hearts has been brought to an end.
+            <span>Important Message:</span> Since the Oblivion Crisis was
+            resolved, the 'production' of Daedric Hearts has been brought to an
+            end.
             <span>Preorders will be delayed</span> until new portals to Oblivion
             are Opened. Thanks for your patience.
           </p>

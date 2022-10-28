@@ -1,8 +1,5 @@
 @use 'src/index' as general;
 
-$preorder-width: 450px;
-$preorder-height: 200px;
-
 .home {
   grid-column: 1/4;
   grid-row: 2/4;
@@ -10,19 +7,25 @@ $preorder-height: 200px;
   @include general.generalFont;
   letter-spacing: 2px;
   font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-// @media (max-width: 800px) {
-
-// }
+@media (min-width: 800px) {
+  .homeMainContent {
+    position: absolute;
+    left: 12%;
+    top: 32%;
+    margin-bottom: 0;
+  }
+}
 
 .homeMainContent {
-  position: absolute;
-  left: 12%;
-  top: 32%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-center;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 30%;
   h1 {
     text-align: center;
     font-weight: 300;
@@ -56,7 +59,7 @@ $preorder-height: 200px;
     opacity: 100;
   }
 }
-@keyframes preOrderBtn {
+@keyframes preorderBtn {
   from {
     transform: translateY(-20px);
     opacity: 0;
@@ -65,8 +68,9 @@ $preorder-height: 200px;
     opacity: 100;
   }
 }
+
 .preOrderBtn {
-  animation: preOrderBtn;
+  animation: preorderBtn;
   animation-duration: 1.4s;
   animation-delay: 6s;
   animation-fill-mode: backwards;
@@ -98,14 +102,19 @@ $preorder-height: 200px;
 .preorderMsgContainer {
   position: absolute;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  height: 93vh;
+  top: 0;
+  height: 100vh;
   width: 100vw;
   &.visible {
     background-color: rgba(10, 10, 10, 0.564);
+    transition-duration: 0.7s;
+    transition-timing-function: ease-out;
   }
   &.notVisible {
+    transition-delay: 0.5s;
+    transition-timing-function: ease-in;
     visibility: hidden;
   }
   &:hover {
@@ -113,54 +122,77 @@ $preorder-height: 200px;
   }
 }
 
-.preorderContainer {
-  margin-top: 10%;
+$msgBox-width: 450px;
+$msgBox-height: 200px;
+@keyframes msgBoxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+@keyframes msgBoxOut {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.preorderPopUp {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: $preorder-width;
-  height: $preorder-height;
-  left: calc(50vw - ($preorder-width) / 2);
-  top: calc(40vh - ($preorder-height) / 2);
+  border-radius: 10px;
+  border: solid 1px rgba(198, 196, 196, 0.583);
+  margin-bottom: 10%;
+  width: $msgBox-width;
+  height: $msgBox-height;
+  left: calc(50vw - ($msgBox-width) / 2);
+  top: calc(40vh - ($msgBox-height) / 2);
   padding: 20px;
-  padding-top: 3px;
+  padding-top: 10px;
   color: black;
   background-color: white;
   cursor: pointer;
+  &.visible {
+    animation: msgBoxIn;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+  &.notVisible {
+    animation: msgBoxOut;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
   p {
     flex-grow: 1;
-    line-height: 22px;
+    line-height: 21px;
     font-size: 1.2rem;
     margin-top: 10px;
     span {
       font-weight: bold;
     }
+    text-align: justify;
   }
 }
 
 .closePreorderBtn {
-  @include general.generalFont;
-  border: none;
-  height: 3.2rem;
-  font-weight: 550;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-right: 0.5rem;
+  margin-left: 96%;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+  border: none;
+  background-color: transparent;
   &:hover {
-    cursor: pointer;
-    transform: translateY(-3px);
-    box-shadow: 4px 5px 2px rgb(0, 0, 0);
-    color: black;
-    background-color: white;
+    transform: scale(1.1);
   }
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 3px 4px 2px rgb(0, 0, 0);
-  }
-  color: black;
-  background-color: white;
-  width: 100%;
-  font-size: 1.2rem;
 }

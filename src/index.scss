@@ -29,7 +29,8 @@
   display: grid;
   grid-template-areas: 'nav nav nav' 'left main right' 'footer footer footer';
   grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: 7vh minmax(88vh, 1fr) 5vh;
+  grid-template-rows: 9vh auto 5vh;
+  height: 100vh;
 
   &.home {
     background-image: url('./daedric.jpg');
@@ -46,10 +47,10 @@
   .main-container {
     grid-template-areas: 'nav' 'main' 'footer';
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr 100px;
+    grid-template-rows: 130px 1fr 50px;
+    height: 100vh;
   }
   .home,
-  .producst,
   .shop {
     grid-area: main;
   }
@@ -58,6 +59,15 @@
   }
 }
 
+@media (max-width: 800px) {
+  .main-container {
+    &.home {
+      background-image: url('./daedric-90deg.jpg');
+      background-position: 70% 55%;
+      background-size: 200%;
+    }
+  }
+}
 @media (min-width: 1920px) {
   .main-container {
     grid-template-columns: 1fr 1920px 1fr;
