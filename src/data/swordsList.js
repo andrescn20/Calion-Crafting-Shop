@@ -47,7 +47,7 @@ const swords = [
     review:
       'Strange sword. Makes me feel uneasy... like it is going to betray me.',
     price: '$1500',
-    image: require('./Images/Gurthang.jpeg'),
+    image: require('../Images/Gurthang.jpeg'),
     quantity: 0,
   },
 ];

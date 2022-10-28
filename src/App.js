@@ -4,7 +4,7 @@ import Shop from './Components/Shop';
 import ShoppingCart from './Components/ShoppingCart';
 import Home from './Components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import swords from './swordsList';
+import swords from './data/swordsList';
 import { useEffect, useState } from 'react';
 
 const App = () => {
