@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'hobbit';
-  src: local('hobbit'), url('./fonts/hobbit.ttf') format('truetype');
+  src: local('hobbit'), url('../fonts/hobbit.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'aniron';
-  src: url('./fonts/aniron.ttf') format('truetype');
+  src: url('../fonts/aniron.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Elven';
-  src: url('./fonts/elven.ttf') format('truetype');
+  src: url('../fonts/elven.ttf') format('truetype');
 }
 @font-face {
   font-family: 'skyrim';
-  src: url('./fonts/skyrim.ttf') format('truetype');
+  src: url('../fonts/skyrim.ttf') format('truetype');
 }
 @font-face {
   font-family: 'girassol';
-  src: url('./fonts/girasol.ttf') format('truetype');
+  src: url('../fonts/girasol.ttf') format('truetype');
 }
 * {
   margin: 0;
@@ -33,12 +33,12 @@
   height: 100vh;
 
   &.home {
-    background-image: url('./Images/daedric.jpg');
+    background-image: url('../Images/daedric.jpg');
     background-position: 30% 55%;
     background-size: cover;
   }
   &.shop {
-    background-image: url('./Images/imladris.jpg');
+    background-image: url('../Images/imladris.jpg');
     background-position: 0% 20%;
     background-size: cover;
   }
@@ -62,7 +62,7 @@
 @media (max-width: 800px) {
   .main-container {
     &.home {
-      background-image: url('./Images/daedric-90deg.jpg');
+      background-image: url('../Images/daedric-90deg.jpg');
       background-position: 70% 55%;
       background-size: 200%;
     }

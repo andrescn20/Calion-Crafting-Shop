@@ -1,4 +1,4 @@
-@use 'src/index' as general;
+@use './index' as general;
 @keyframes products {
   from {
     opacity: 0;
@@ -138,6 +138,14 @@
   height: fit-content;
 }
 
+@keyframes addProduct {
+  from {
+  }
+  to {
+    opacity: 0;
+    transform: translateX();
+  }
+}
 .cartProductImage {
   width: 200px;
   align-self: center;

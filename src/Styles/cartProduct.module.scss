@@ -1,4 +1,4 @@
-@use 'src/index' as general;
+@use './index' as general;
 
 .cartProduct {
   @include general.girassol;
