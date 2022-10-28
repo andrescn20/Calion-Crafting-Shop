@@ -39,8 +39,8 @@ const Home = ({ updateBackground }) => {
             <span>Important Message:</span> Since the Oblivion Crisis was
             resolved, the 'production' of Daedric Hearts has been brought to an
             end.
-            <span>Preorders will be delayed</span> until new portals to Oblivion
-            are Opened. Thanks for your patience.
+            <span> Preorders will be delayed</span> until new portals to
+            Oblivion are Opened. Thanks for your patience.
           </p>
         </div>
       </div>

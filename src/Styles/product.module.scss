@@ -10,6 +10,7 @@
 }
 
 .shopProduct {
+  position: relative;
   animation: products;
   animation-duration: 1.2s;
   display: flex;
@@ -74,16 +75,16 @@
   grid-column: 1/2;
 }
 
-.notVisible {
-  visibility: hidden;
-}
-
-.visible {
-  visibility: visible;
-}
-
 .review {
+  &.notVisible {
+    visibility: hidden;
+  }
+
+  &.visible {
+    visibility: visible;
+  }
   position: absolute;
+  // top: 0;
   width: 210px;
   height: 200px;
   background-color: rgba(64, 63, 61, 0.905);
@@ -93,7 +94,6 @@
   justify-content: center;
   padding-left: 10px;
   padding-right: 10px;
-
   font-size: 1rem;
   letter-spacing: 2px;
   color: white;
