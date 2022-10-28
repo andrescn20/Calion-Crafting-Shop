@@ -44,6 +44,7 @@ const CartProduct = ({
           className={styles.textInput}
           value={quantity}
           readOnly
+          disabled
         ></input>
         <button
           type='button'

@@ -15,15 +15,21 @@ const NavBar = ({ toggleCart, globalQuantity }) => {
           <p className={styles.headerText}> Calion Crafting</p>
         </Link>
       </div>
-      <ul className={styles.navLinks}>
+      <ul className={styles.navLinksContainer}>
         <Link to='/'>
-          <li className={styles.link}> Home </li>
+          <li className={`${styles.link} ${styles.rightNavElements}`}>
+            {' '}
+            Home{' '}
+          </li>
         </Link>
         <Link to='/shop'>
-          <li className={styles.link}> Products </li>
+          <li className={`${styles.link} ${styles.rightNavElements}`}>
+            {' '}
+            Products{' '}
+          </li>
         </Link>
 
-        <div className={styles.cartNav}>
+        <div className={`${styles.cartNav} ${styles.rightNavElements}`}>
           <button className={styles.cart} onClick={toggleCart}>
             <img src={wagon} alt='Cart' />
           </button>

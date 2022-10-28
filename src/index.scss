@@ -58,6 +58,13 @@
   }
 }
 
+@media (min-width: 1920px) {
+  .main-container {
+    grid-template-columns: 1fr 1920px 1fr;
+    grid-template-rows: 7vh minmax(88vh, 1fr) 5vh;
+  }
+}
+
 @mixin main {
   grid-area: main;
   display: flex;

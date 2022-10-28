@@ -1,7 +1,6 @@
 @use 'src/index' as general;
 
 .navBar {
-  // box-shadow: 1px 1px 3px 2px rgba(5, 5, 5, 0.246);
   display: flex;
   align-items: center;
   gap: 30px;
@@ -23,6 +22,11 @@
     font-weight: 500;
     @include general.girassol;
     font-size: 1.8rem;
+  }
+}
+@media (min-width: 1920px) {
+  .navBar {
+    grid-column: 2/3;
   }
 }
 
@@ -47,6 +51,9 @@
   }
 }
 
+.rightNavElements {
+  margin: 0 20px 0 20px;
+}
 .calionCrafting {
   flex-grow: 1;
 }
@@ -62,10 +69,11 @@
   }
 }
 
-.navLinks {
+.navLinksContainer {
   display: flex;
   align-items: center;
-
+  @include general.girassol;
+  font-size: 1.7rem;
   a {
     width: fit-content;
     list-style: none;
@@ -79,10 +87,13 @@
       transform: translateY(-1px);
     }
   }
-  @include general.girassol;
-  font-size: 1.7rem;
 }
 
+@media (min-width: 600px) {
+  .rightNavElements {
+    margin: 0 40px 0 80px;
+  }
+}
 .cartNav {
   position: relative;
   background-color: transparent;

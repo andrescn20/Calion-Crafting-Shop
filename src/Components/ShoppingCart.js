@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../Styles/shoppingCart.module.scss';
 import CartProduct from './CartProduct';
+import close from '../close-black.png';
 
 const ShoppingCart = ({
   isCartVisible,
@@ -57,6 +58,9 @@ const ShoppingCart = ({
         onClick={divClick}
       ></div>
       <div className={`${styles.cartContainer} ${visibilityClass}`}>
+        <button className={styles.closeCart} onClick={toggleCart}>
+          <img src={close} alt='Close Button' />
+        </button>
         <div className={styles.products}> {displayCartItems}</div>
         <div className={styles.cartControls}>
           <p className={styles.totalPrice}>{'Total: $' + totalPrice}</p>
@@ -68,12 +72,9 @@ const ShoppingCart = ({
           </button>
         </div>
       </div>
-      <button className={styles.closeCart} onClick={toggleCart}>
-        Close Cart
-      </button>
       <div className={`${styles.checkoutDiv} ${checkoutVisibility}`}>
         <button className={styles.closeCheckout} onClick={closeCheckout}>
-          Close
+          <img src={close} alt='Close Button' />
         </button>
         <p>
           After thorough consideration, we have concluded this items are not

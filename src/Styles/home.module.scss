@@ -11,11 +11,9 @@ $preorder-height: 200px;
   letter-spacing: 2px;
   font-size: 1.3rem;
 }
-@media (max-width: 800px) {
-  .home {
-    grid-area: main;
-  }
-}
+// @media (max-width: 800px) {
+
+// }
 
 .homeMainContent {
   position: absolute;

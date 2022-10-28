@@ -54,6 +54,9 @@ form {
   text-align: center;
   @include general.generalFont;
   font-weight: 600;
+  background-color: transparent;
+  font-size: 1.25rem;
+  color: black;
 }
 
 .adjustBtn {
@@ -63,4 +66,7 @@ form {
   font-weight: 700;
   font-size: 1.6rem;
   @include general.generalFont;
+  &:hover {
+    cursor: pointer;
+  }
 }

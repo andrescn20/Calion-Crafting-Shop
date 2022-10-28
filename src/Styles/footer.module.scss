@@ -4,6 +4,12 @@ footer {
   align-items: center;
   grid-area: footer;
 }
+@media (min-width: 1920px) {
+  footer {
+    grid-column: 2/3;
+    transform: scale(1.8);
+  }
+}
 
 a {
   display: flex;
@@ -17,16 +23,10 @@ a {
 
 .creator > p {
   color: white;
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 strong {
-  font-size: 0.9rem;
-  color: white;
-}
-
-.span {
-  font-size: 0.7rem;
-  font-weight: bold;
+  font-size: 1.2rem;
   color: white;
 }
 
