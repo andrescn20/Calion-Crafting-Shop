@@ -1,70 +1,36 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Calion Crafting Shop. 
+## Description 
 
-## Available Scripts
+This project is an **e-commerce** mock up. Built as a way of practicing and showcasing programming skills as well as to be used as a template for future similar projects. 
 
-In the project directory, you can run:
+### Technology Stack. 
 
-### `npm start`
+- **React JS**: Main Library used to create the App. 
+- **CSS Modules**: Every Component has its own styling module. 
+- **SASS**: All styling is written in  the *scss* syntax.
+- **React Router**. 
+- **React-medium-image-zoom**: External Library for zooming images. 
+- **Gh-pages**: Hosting service used for deployment. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Responsiveness**: Built with adaptability in mind, this page can be used in every common screen size. Ranging from small modern phone screens all the way up to ultra-wide monitors. 
+- **Fully animated**: Animations were included all across the site to make navigation and interaction as smooth and inmersive as possible. 
+- **Cursor Detailing**: Cursor constantly changes to help the user on its navigation. Not only showing the usual hovering on buttons and links but also giving hints of not so obvious extra faetures included to facilitate navigation. 
+- **Navigation**: Ease of use thanks to the addition of several options for interacting with certain key areas. PopUps can be closed, as usual, with the 'X' button, but also with external clicking and pressing `Esc` on the keyboard.  
 
-### `npm test`
+Overall, this web app is thought with detail and easy of use in mind. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Inspiration
 
-### `npm run build`
+Calion Crafting is my own personal brand. I use it mostly as a hobby for creating stuff with my own hands on my freetime. Mostly wood work, forging and some 3D printing. The webpage is made so that I could eventually use it for real world application. In its current state, it has aesthetic elements borrowed from Tolkien's imaginarium and Skyrim. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Future Improvements.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Expansion of catalogue: Isted of a single Products Tab, categories would be added to it.  
+- BackEnd:
+  --> Inventories
+  --> User Accounts
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
