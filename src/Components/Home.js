@@ -16,8 +16,14 @@ const Home = ({ updateBackground }) => {
   };
   useEffect(() => updateBackground('home'));
 
+  const closePreorderEsc = (event) => {
+    if ((event.key === 'Escape') & (preorderVisibility === styles.visible)) {
+      closePreorder();
+    }
+  };
+
   return (
-    <div className={styles.home}>
+    <div className={styles.home} onKeyDown={closePreorderEsc}>
       <div className={styles.homeMainContent}>
         <h1>
           <span>SKYRIM </span> <br></br> <p>Daedric Collection</p>

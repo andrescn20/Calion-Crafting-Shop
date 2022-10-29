@@ -62,9 +62,9 @@ $checkout-height: 200px;
   right: 0;
   overflow: hidden;
   z-index: 1;
-  &.start {
-    z-index: -1;
-  }
+  // &.start {
+  //   // z-index: -1;
+  // }
   &.visible {
     visibility: visible;
   }
@@ -124,6 +124,9 @@ $checkout-height: 200px;
     animation: cartBackgroundOut;
     animation-duration: 0.7s;
     animation-timing-function: ease-in;
+  }
+  &:focus {
+    background-color: red;
   }
 }
 

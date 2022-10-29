@@ -103,6 +103,9 @@
     transform: translateY(-1px);
     box-shadow: 3px 4px 2px rgb(0, 0, 0);
   }
+  &:focus {
+    border: none;
+  }
 }
 
 .preorderMsgContainer {

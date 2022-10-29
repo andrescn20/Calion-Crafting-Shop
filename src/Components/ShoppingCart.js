@@ -35,6 +35,13 @@ const ShoppingCart = ({
     setCheckoutVisibility(styles.notVisible);
   };
 
+  // //Closes Checkout with Keyboard
+  // const closeCheckoutEsc = (event) => {
+  //   if ((event.key === 'Escape') & (checkoutVisibility === styles.visible)) {
+  //     closeCheckout();
+  //   }
+  // };
+
   //Generates de CartProduct components in cart
   const displayCartItems = cartList.map((item) => {
     return (
@@ -52,8 +59,21 @@ const ShoppingCart = ({
     toggleCart();
   };
 
+  //Closes Cart with Keyboard
+  const closeOpenModals = (event) => {
+    if ((event.key === 'Escape') & (isCartVisible === true)) {
+      divClick();
+    }
+  };
+
   return (
-    <div className={`${styles.shoppingCart} ${visibilityClass}`}>
+    //Shopping Cart Main Container
+
+    <div
+      className={`${styles.shoppingCart} ${visibilityClass}`}
+      onKeyDown={closeOpenModals}
+      tabIndex='-1'
+    >
       <div className={`${styles.checkoutDiv} ${checkoutVisibility}`}>
         <button className={styles.closeCheckout} onClick={closeCheckout}>
           <img src={close} alt='Close Button' />
@@ -64,14 +84,17 @@ const ShoppingCart = ({
           further notice. We are sorry for any inconvenience.
         </p>
       </div>
+
       <div
         className={`${styles.emptyDiv} ${visibilityClass}`}
         onClick={divClick}
       ></div>
+
       <div className={`${styles.cartContainer} ${visibilityClass}`}>
-        <button className={styles.closeCart} onClick={toggleCart}>
+        <button className={styles.closeCart} onClick={divClick}>
           <img src={close} alt='Close Button' />
         </button>
+
         <div className={styles.products}> {displayCartItems}</div>
         <div className={styles.cartControls}>
           <p className={styles.totalPrice}>{'Total: $' + totalPrice}</p>
