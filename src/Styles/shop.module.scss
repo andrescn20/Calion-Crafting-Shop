@@ -1,9 +1,24 @@
+@use './index.scss' as general;
 .shop {
   justify-content: center;
   grid-column: 1/4;
   grid-row: 2/3;
   margin: 0 7rem 0 7rem;
   margin-top: 10px;
+  overflow-y: auto;
+  &::-webkit-scrollbar-track {
+    border: 1px solid black;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @include general.dark;
+  }
 }
 
 .productContainer {
@@ -13,6 +28,8 @@
   grid-template-columns: repeat(auto-fit, 250px);
   justify-content: center;
   gap: 30px;
+  padding-top: 0px;
+  margin-top: 20px;
 }
 
 @media (max-width: 1200px) {

@@ -1,6 +1,8 @@
 @use './index' as general;
 
 .navBar {
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -10,19 +12,19 @@
   padding-top: 10px;
   padding-bottom: 5px;
   padding-left: 20px;
-  margin: 0px 40px 0px 40px;
-  &:hover {
-    background-color: #1111117c;
-  }
+  @include general.dark;
+
   transition-duration: 0.2s;
   .headerLogo {
-    height: 8vh;
+    height: 2rem;
+    margin-left: 40px;
   }
   .headerText {
     color: white;
     font-weight: 500;
     @include general.girassol;
     font-size: 1.8rem;
+    line-height: 25px;
   }
 }
 @media (min-width: 1920px) {
@@ -51,6 +53,12 @@
 .rightNavElements {
   margin: 0 20px 0 20px;
 }
+
+@media (min-width: 600px) {
+  .rightNavElements {
+    margin: 0 40px 0 80px;
+  }
+}
 .calionCrafting {
   flex-grow: 1;
 }
@@ -58,7 +66,7 @@
 .actionContainer {
   width: fit-content;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   transition-duration: 0.2s;
   &:hover {
     cursor: pointer;
@@ -68,11 +76,9 @@
 
 .navLinksContainer {
   display: flex;
-  align-items: center;
   @include general.hobbit;
   font-size: 1.7rem;
   a {
-    width: fit-content;
     list-style: none;
     color: white;
     transition: all 0.2s ease-out;
@@ -86,13 +92,9 @@
   }
 }
 
-@media (min-width: 600px) {
-  .rightNavElements {
-    margin: 0 40px 0 80px;
-  }
-}
 .cartNav {
-  position: relative;
+  position: sticky;
+  right: 0;
   background-color: transparent;
   border: none;
   font-size: 1.7rem;

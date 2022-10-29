@@ -103,3 +103,38 @@
   font-family: girassol;
   letter-spacing: 1.5px;
 }
+@mixin dark {
+  background-color: #111111b9;
+}
+.cartNav {
+  position: relative;
+  top: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 1.7rem;
+  transition: all 0.2s ease-out;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: translateY(-1px);
+    border: none;
+  }
+  &:focus {
+    border: none;
+  }
+  button {
+    background-color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    img {
+      height: 35px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

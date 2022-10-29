@@ -8,7 +8,7 @@ const NavBar = ({ toggleCart, globalQuantity }) => {
       <div className={styles.calionCrafting}>
         <Link to='/' className={styles.actionContainer}>
           <img
-            src={require('../Images/logo-black.png')}
+            src={require('../Images/new-logo.png')}
             alt='Calion-Crafting-Logo'
             className={styles.headerLogo}
           />
