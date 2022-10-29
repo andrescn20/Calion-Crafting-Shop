@@ -37,8 +37,14 @@
         letter-spacing: 1px;
       }
     }
+    .reviewContainer {
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
     .review {
-      height: 20%;
+      top: 20%;
+      width: 60%;
+      left: 15%;
     }
     .productImage {
       width: 35vw;
@@ -66,6 +72,7 @@
 .reviewContainer {
   display: flex;
   width: auto;
+
   img {
     height: 1.2rem;
   }
@@ -84,10 +91,11 @@
     visibility: visible;
   }
   position: absolute;
-  // top: 0;
-  width: 210px;
-  height: 200px;
-  background-color: rgba(64, 63, 61, 0.905);
+  padding: 1rem;
+  top: 20%;
+  width: 80%;
+  left: 5%;
+  background-color: rgba(64, 63, 61, 0.956);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -97,6 +105,7 @@
   font-size: 1rem;
   letter-spacing: 2px;
   color: white;
+  flex-grow: 1;
 }
 
 .flexContainer {
