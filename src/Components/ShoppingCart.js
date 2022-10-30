@@ -17,7 +17,7 @@ const ShoppingCart = ({
     styles.notVisible
   );
 
-  //Toggles Visibility on or off.
+  //Toggles Visibility of whole component on or off.
   useEffect(() => {
     if (isCartVisible === false) {
       setVisibilityClass(styles.notVisible);
@@ -27,6 +27,7 @@ const ShoppingCart = ({
     }
   }, [isCartVisible]);
 
+  //Toggle visibility of CheckoutBox, separeted in 2 functions.
   const openCheckout = () => {
     setCheckoutVisibility(styles.visible);
   };
@@ -35,14 +36,7 @@ const ShoppingCart = ({
     setCheckoutVisibility(styles.notVisible);
   };
 
-  // //Closes Checkout with Keyboard
-  // const closeCheckoutEsc = (event) => {
-  //   if ((event.key === 'Escape') & (checkoutVisibility === styles.visible)) {
-  //     closeCheckout();
-  //   }
-  // };
-
-  //Generates de CartProduct components in cart
+  //Populates cart with current items.
   const displayCartItems = cartList.map((item) => {
     return (
       <CartProduct
@@ -54,7 +48,8 @@ const ShoppingCart = ({
     );
   });
 
-  const divClick = () => {
+  //"Closes" the cart and also the checkout msg in case it is open
+  const closeWholeCart = () => {
     closeCheckout();
     toggleCart();
   };
@@ -62,7 +57,7 @@ const ShoppingCart = ({
   //Closes Cart with Keyboard
   const closeOpenModals = (event) => {
     if ((event.key === 'Escape') & (isCartVisible === true)) {
-      divClick();
+      closeWholeCart();
     }
   };
 
@@ -74,24 +69,29 @@ const ShoppingCart = ({
       onKeyDown={closeOpenModals}
       tabIndex='-1'
     >
-      <div className={`${styles.checkoutDiv} ${checkoutVisibility}`}>
-        <button className={styles.closeCheckout} onClick={closeCheckout}>
-          <img src={close} alt='Close Button' />
-        </button>
-        <p>
-          After thorough consideration, we have concluded this items are not
-          worth any value in human currency. Purchases have been halted until
-          further notice. We are sorry for any inconvenience.
-        </p>
+      <div
+        className={`${styles.checkoutAuxiliarContainer} ${checkoutVisibility}`}
+        onClick={closeCheckout}
+      >
+        <div className={`${styles.checkoutDiv} ${checkoutVisibility}`}>
+          <button className={styles.closeCheckout} onClick={closeCheckout}>
+            <img src={close} alt='Close Button' />
+          </button>
+          <p>
+            After thorough consideration, we have concluded this items are not
+            worth any value in human currency. Purchases have been halted until
+            further notice. We are sorry for any inconvenience.
+          </p>
+        </div>
       </div>
 
       <div
         className={`${styles.emptyDiv} ${visibilityClass}`}
-        onClick={divClick}
+        onClick={closeWholeCart}
       ></div>
 
       <div className={`${styles.cartContainer} ${visibilityClass}`}>
-        <button className={styles.closeCart} onClick={divClick}>
+        <button className={styles.closeCart} onClick={closeWholeCart}>
           <img src={close} alt='Close Button' />
         </button>
 

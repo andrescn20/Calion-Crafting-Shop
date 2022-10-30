@@ -100,7 +100,16 @@ $checkout-height: 200px;
 
 @media (max-width: 750px) {
   .shoppingCart {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 30vw 1fr;
+    .reset,
+    .checkout {
+      width: 50vw;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .shoppingCart {
+    grid-template-columns: 50px 1fr;
     .reset,
     .checkout {
       width: 50vw;
@@ -227,11 +236,13 @@ $checkout-height: 200px;
   background-color: transparent;
   &:hover {
     transform: scale(1.1);
+    cursor: pointer;
   }
   &:active {
     transform: scale(1);
   }
 }
+
 @keyframes msgBox {
   from {
     opacity: 0;
@@ -259,9 +270,34 @@ $msgBox-height: 200px;
     opacity: 0;
   }
 }
+
+.checkoutAuxiliarContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  @include general.dark;
+  z-index: 1;
+  &:hover {
+    cursor: url('../Images/close-window-16.png'), pointer;
+  }
+  &.visible {
+    animation: msgBoxIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+  &.notVisible {
+    animation: msgBoxOut;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+  &.notVisible {
+    transition-delay: 0.5s;
+    visibility: hidden;
+  }
+}
 .checkoutDiv {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   border: solid 1px rgba(198, 196, 196, 0.583);
   display: flex;
   flex-direction: column;
@@ -277,7 +313,9 @@ $msgBox-height: 200px;
   padding-top: 10px;
   color: black;
   background-color: white;
-
+  &:hover {
+    cursor: default;
+  }
   p {
     flex-grow: 1;
     line-height: 21px;

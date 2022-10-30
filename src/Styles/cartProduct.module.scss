@@ -10,11 +10,18 @@
     'image quantity';
   flex-grow: 1;
   padding: 15px;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr;
   margin-left: 5%;
   border-radius: 8px;
   font-weight: 600;
+}
+
+@media (max-width: 450px) {
+  .cartProduct {
+    padding: 0;
+    margin-left: 0px;
+  }
 }
 
 .productImage {
