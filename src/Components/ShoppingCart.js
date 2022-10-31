@@ -16,6 +16,8 @@ const ShoppingCart = ({
   const [checkoutVisibility, setCheckoutVisibility] = useState(
     styles.notVisible
   );
+  const [checkoutText, setCheckoutText] = useState('');
+  const [cartDisplay, setCartDisplay] = useState('Cart is Empty');
 
   //Toggles Visibility of whole component on or off.
   useEffect(() => {
@@ -32,6 +34,18 @@ const ShoppingCart = ({
     setCheckoutVisibility(styles.visible);
   };
 
+  useEffect(() => {
+    if (globalQuantity === 0) {
+      setCheckoutText(
+        'Oops! Looks like there are no items in your Cart. Please add items to cart before proceeding to checkout'
+      );
+    } else {
+      setCheckoutText(
+        'After thorough consideration, we have concluded this items are not worth any value in human currency. Purchases have been halted until further notice. We are sorry for any inconvenience.'
+      );
+    }
+  }, [globalQuantity]);
+
   const closeCheckout = () => {
     setCheckoutVisibility(styles.notVisible);
   };
@@ -47,6 +61,14 @@ const ShoppingCart = ({
       />
     );
   });
+
+  useEffect(() => {
+    if (globalQuantity === 0) {
+      setCartDisplay(<p className={styles.emptyCart}>Cart is Empty</p>);
+    } else {
+      setCartDisplay(displayCartItems);
+    }
+  }, [globalQuantity]);
 
   //"Closes" the cart and also the checkout msg in case it is open
   const closeWholeCart = () => {
@@ -77,11 +99,7 @@ const ShoppingCart = ({
           <button className={styles.closeCheckout} onClick={closeCheckout}>
             <img src={close} alt='Close Button' />
           </button>
-          <p>
-            After thorough consideration, we have concluded this items are not
-            worth any value in human currency. Purchases have been halted until
-            further notice. We are sorry for any inconvenience.
-          </p>
+          <p>{checkoutText}</p>
         </div>
       </div>
 
@@ -95,7 +113,7 @@ const ShoppingCart = ({
           <img src={close} alt='Close Button' />
         </button>
 
-        <div className={styles.products}> {displayCartItems}</div>
+        <div className={styles.products}>{cartDisplay}</div>
         <div className={styles.cartControls}>
           <p className={styles.totalPrice}>{'Total: $' + totalPrice}</p>
           <button

@@ -151,6 +151,7 @@ const App = () => {
           resetCart={resetCart}
           totalPrice={totalPrice}
           toggleCart={toggleCart}
+          globalQuantity={globalQuantity}
         />
         <Footer />
       </div>
