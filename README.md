@@ -1,5 +1,8 @@
 
 # Calion Crafting Shop. 
+##Live Demo: 
+https://andrescn20.github.io/Calion-Crafting-Shop/
+
 ## Description 
 
 This project is an **e-commerce** mock up. Built as a way of practicing and showcasing programming skills as well as to be used as a template for future similar projects. 
