@@ -5,7 +5,7 @@ https://andrescn20.github.io/Calion-Crafting-Shop/
 
 ## Description 
 
-This project is an **e-commerce** mock up. Built as a way of practicing and showcasing programming skills as well as to be used as a template for future similar projects. 
+This project is an **e-commerce** mock up. Built as a template for real projects. 
 
 ### Technology Stack. 
 
@@ -19,8 +19,7 @@ This project is an **e-commerce** mock up. Built as a way of practicing and show
 ### Features. 
 
 - **Responsiveness**: Built with adaptability in mind, this page can be used in every common screen size. Ranging from small modern phone screens all the way up to ultra-wide monitors. 
-- **Fully animated**: Animations were included all across the site to make navigation and interaction as smooth and inmersive as possible. 
-- **Cursor Detailing**: Cursor constantly changes to help the user on its navigation. Not only showing the usual hovering on buttons and links but also giving hints of not so obvious extra faetures included to facilitate navigation. 
+- **Fully animated**: Animations were included all across the site to make navigation and interaction as smooth and inmersive as possible.  
 - **Navigation**: Ease of use thanks to the addition of several options for interacting with certain key areas. PopUps can be closed, as usual, with the 'X' button, but also with external clicking and pressing `Esc` on the keyboard.  
 
 Overall, this web app is thought with detail and easy of use in mind. 
@@ -35,5 +34,6 @@ Calion Crafting is my own personal brand. I use it mostly as a hobby for creatin
 - BackEnd:
   --> Inventories
   --> User Accounts
+- Payment Options
   
 
